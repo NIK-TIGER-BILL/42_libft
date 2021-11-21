@@ -56,18 +56,18 @@ RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${GCC} ${CFLAGS} -c $< ${HEAD}
+			@${GCC} ${CFLAGS} -c $< ${HEAD}
 
 ${NAME}:	${OBJS}
-			${AR} ${RC} ${NAME} ${OBJS}
-			ranlib ${NAME}
+			@${AR} ${RC} ${NAME} ${OBJS}
+			@ranlib ${NAME}
 
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS}
+			@${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re:			fclean all
